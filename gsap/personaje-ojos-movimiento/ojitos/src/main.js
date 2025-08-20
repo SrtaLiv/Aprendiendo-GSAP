@@ -28,9 +28,12 @@ function moveEyes() {
     const x = ((mouseX / width) - 0.5) * 100;
     const y = ((mouseY / height) - 0.5) * 100;
 
+    // Aumentar el rango de movimiento y suavizar
     gsap.to(".eye", {
-        xPercent: x / 5,
-        yPercent: y / 5
+        xPercent: x * 0.6,
+        yPercent: y * 1.2, // más rango vertical
+        ease: "power2.out",
+        duration: 0.3
     });
 }
 

@@ -13,7 +13,7 @@
     background: white;
     border-radius: 50%;
     position: absolute;
-    top: 50%;
+    top: 45%; /* más espacio arriba */
     transform: translate(-50%, -50%);
   }
   
