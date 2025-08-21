@@ -1,0 +1,24 @@
+.principal-container{
+    height: 800vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, #ff7e5f, #feb47b, #ff6b6b, #4ecdc4);
+    position: relative; 
+}
+
+.box-planet{
+    position: relative; 
+    height: 800vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nave{
+    transform: rotate(180deg);
+    position: absolute; /* Posicionamiento absoluto */
+    z-index: 10; /* Asegurar que esté encima del fondo */
+    top: 100px;
+    height: 350px;
+    width: 350px;
+}
