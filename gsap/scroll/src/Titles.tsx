@@ -1,44 +1,43 @@
 import './App.css'
 import { gsap, Elastic } from "gsap";
-import { useEffect } from 'react'; // Importar useEffect
-
+import { useGSAP } from '@gsap/react';
 import { PixiPlugin } from "gsap/PixiPlugin";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 import { ScrollTrigger } from 'gsap/all';
+import { useRef } from 'react';
 
 gsap.registerPlugin(PixiPlugin, ScrollTrigger, ScrollSmoother, ScrollToPlugin, TextPlugin);
 
 function Title() {
-    const timeline = gsap.timeline();
+    const titleElements = useRef<(HTMLHeadingElement | null)[]>([]);
+    const title2Elements = useRef<(HTMLHeadingElement | null)[]>([]);
 
-    useEffect(() => {
-        const title = document.querySelectorAll('.title');
-        const title2 = document.querySelectorAll('.title2');
+    useGSAP(() => {
+        const timeline = gsap.timeline();
 
-        timeline.from(title, {
-            opacity: 0, // Cambiar a 0 para que aparezcan
+        timeline.from(titleElements.current, {
+            opacity: 0,
             y: 50,
             duration: 1,
             stagger: 0.3
-        }).from(title2, {
-            opacity: 0, // Cambiar a 0 para que aparezcan
+        }).from(title2Elements.current, {
+            opacity: 0,
             y: 50,
             x: 50,
             duration: 1,
             stagger: 0.3,
             ease: Elastic.easeInOut.config(1, 0.3)
         }, "-=1.3");
+    });
 
-    }, []
-    )
     return (
-        <div className=''>
-            <h1 className='title'>Nebula Solutions</h1>
-            <h2 className='title'>Hacemos tus ideas realidad</h2>
-            <h1 className='title2'>+</h1>
-            <h2 className='title2'>Software</h2>
+        <div>
+            <h1 ref={(el) => titleElements.current[0] = el} className='title '>Nebula Solutions</h1>
+            <h2 ref={(el) => titleElements.current[1] = el} className='title '>Desarrollo web a medida 100% con codigo</h2>
+            <h1 ref={(el) => title2Elements.current[0] = el} className='title2 '>+</h1>
+            <h2 ref={(el) => title2Elements.current[1] = el} className='title2 '>Software</h2>
         </div>
     )
 }

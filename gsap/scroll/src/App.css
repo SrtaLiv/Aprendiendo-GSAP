@@ -1,3 +1,39 @@
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("/fonts/BebasNeue-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  src: url("/fonts/FiraSans-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik-VariableFont_wght.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Rubik Italic";
+  src: url("/fonts/Rubik-Italic-VariableFont_wght.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Chillax-Variable';
+  src: url('/fonts/Chillax-Variable.woff2') format('woff2'),
+    url('/fonts/Chillax-Variable.woff') format('woff'),
+    url('/fonts/Chillax-Variable.ttf') format('tru  etype');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+h1, h2{
+  font-family: "Bebas Neue";
+}
+
+
 .principal-container{
     height: 800vh;
     width: 100vw;
@@ -20,5 +56,47 @@
     z-index: 10; /* Asegurar que esté encima del fondo */
     top: 100px;
     height: 350px;
+
     width: 350px;
 }
+
+body {
+	background-color: var(--dark);
+	color: var(--light);
+	margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.box {
+	width: 100px;
+	height: 100px;
+  border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-weight: 600;
+  margin: 10px;
+}
+
+.circle {
+	width: 100px;
+	height: 100px;
+  border-radius: 99%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-weight: 600;
+  margin: 10px;
+}
+
+.App, .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 100vh;
+}
+
+

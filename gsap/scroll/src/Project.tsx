@@ -7,7 +7,6 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 import { ScrollTrigger } from 'gsap/all';
-import Title from './Titles';
 import _ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(PixiPlugin, ScrollTrigger, ScrollSmoother, ScrollToPlugin, TextPlugin);
